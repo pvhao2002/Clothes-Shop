@@ -1,0 +1,24 @@
+﻿@model ClothesShop.Models.about
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Chỉnh sửa trang giới thiệu</h4>
+            @using (Html.BeginForm("doUpdate", "About", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "forms-sample" }))
+            {
+                @Html.HiddenFor(item => item.about_id)
+                <div class="form-group">
+                    <label>Nội dung</label>
+                    <textarea id="editor" name="content" class="form-control" rows="10">@Model.content</textarea>
+                </div>
+                <input type="submit" class="btn btn-gradient-primary me-2" name="add" value="Chỉnh sửa">
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/admin/js/CKEditor.js"></script>

@@ -1,0 +1,65 @@
+﻿@model ClothesShop.Models.user
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page section-header text-center">
+    <div class="page-title">
+        <div class="wrapper">
+            <h1 class="page-width">Quên mật khẩu</h1>
+        </div>
+    </div>
+</div>
+<!--End Page Title-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+            <div class="mb-4">
+                @using (Html.BeginForm("doReset", "ForgotPassword", FormMethod.Post, new { @class = "contact-form" }))
+                {
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+
+                            @if (Session["error"] != null)
+                            {
+                                <span class="text-danger">@Session["error"]</span>
+                                Session["error"] = null;
+                            }
+                            else if (Session["success"] != null)
+                            {
+                                <span class="text-success">@Session["success"]</span>
+                                Session["error"] = null;
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.email)
+                                @Html.TextBoxFor(m => m.email, new
+                           {
+                               autocorrect = "off",
+                               autocapitalize = "off",
+                               type = "email",
+                               placeholder = "abc@gmail.com",
+                               required = "required"
+                           })
+                                @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="submit" class="btn mb-3" name="login" value="Quên mật khẩu">
+                            <p class="mb-4">
+                                <a href="/Register" id="customer_register_link">Đăng ký</a> |
+                                <a href="/Login" id="customer_register_link">Đăng nhập</a>
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

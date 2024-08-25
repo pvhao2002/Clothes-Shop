@@ -1,0 +1,206 @@
+﻿@model ClothesShop.ViewModel.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="slideshow slideshow-wrapper pb-section sliderFull">
+    <div class="home-slideshow">
+        @foreach (var slider in Model.sliderList)
+        {
+            <div class="slide">
+                <div class="blur-up lazyload bg-size">
+                    <img class="blur-up lazyload bg-img" data-src=@Url.Content(slider.slider_img)
+                         src=@Url.Content(slider.slider_img) alt="quần áoShop" title="Clothes shop" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic bottom">
+                        <div class="slideshow__text-content bottom">
+                            <div class="wrap-caption center">
+                                <h2 class="h1 mega-title slideshow__title">quần áoShop</h2>
+                                <span class="mega-subtitle slideshow__subtitle">
+                                    AmyShop là cửa hàng bán lẻ quần áo hàng đầu tại Bình Dương, shop chuyên cung cấp các loại quần áo, phụ kiện, bảo hành. Chúng tôi cung cấp đầy đủ các thương hiệu quần áo phổ biến nhất, cũng như các dịch vụ hỗ trợ và khuyến mãi...
+
+                                </span>
+                                <a href="/Product" class="btn">Mua hàng ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="tab-slider-product section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="h2">Sản phẩm bán chạy</h2>
+                </div>
+                <div class="tabs-listing">
+                    <div class="tab_container">
+                        @if (Model.productList != null && Model.productList.Count > 0)
+                        {
+                            <div id="tab1" class="tab_content grid-products">
+                                <div class="productSlider">
+                                    @foreach (var product in Model.productList)
+                                    {
+                                        <div class="col-12 item">
+                                            <!-- start product image -->
+                                            <div class="product-image">
+                                                <!-- start product image -->
+                                                <a href="/Product/Detail/@product.product_id">
+                                                    <!-- image -->
+                                                    <img class="primary blur-up lazyload"
+                                                         data-src=@Url.Content(product.product_image)
+                                                         src=@Url.Content(product.product_image) alt="image"
+                                                         style="width: 250px; height: 200px; object-fit: contain;"
+                                                         title="@product.product_name">
+                                                    <!-- End image -->
+                                                    <!-- Hover image -->
+                                                    <img class="hover blur-up lazyload"
+                                                         data-src=@Url.Content(product.product_image)
+                                                         src=@Url.Content(product.product_image) alt="image"
+                                                         style="width: 250px; height: 200px; object-fit: contain; "
+                                                         title="@product.product_name">
+                                                    <!-- End hover image -->
+                                                    <!-- product label -->
+                                                    <div class="product-labels rectangular">
+                                                        <span class="lbl pr-label1">Best seller</span>
+                                                    </div>
+                                                    <!-- End product label -->
+                                                </a>
+                                                <!-- end product image -->
+                                                <!-- Start product but-->
+                                                <form class="variants add" action="/Cart/Add" method="post">
+                                                    <input type="hidden" name="pid"
+                                                           value="@product.product_id">
+                                                    <input type="hidden" name="price"
+                                                           value="@product.price">
+                                                    <button class="btn btn-addto-cart" type="submit">Thêm vào giỏ hàng</button>
+                                                </form>
+                                                <div class="button-set">
+                                                    <a href="javascript:void(0)" title="Quick View"
+                                                       onclick="toastFunc()"
+                                                       class="quick-view-popup quick-view" data-toggle="modal"
+                                                       data-target="#content_quickview">
+                                                        <i class="icon anm anm-search-plus-r"></i>
+                                                    </a>
+                                                    <div class="wishlist-btn">
+                                                        <a class="wishlist add-to-wishlist" href="javascript:void(0)" 
+                                                           onclick="toastFunc()">
+                                                            <i class="icon anm anm-heart-l"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="compare-btn">
+                                                        <a class="compare add-to-compare" href="javascript:void(0)"
+                                                          onclick="toastFunc()"
+                                                           title="Add to Compare">
+                                                            <i class="icon anm anm-random-r"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!-- end product button -->
+                                            </div>
+                                            <!-- end product image -->
+                                            <!--start product details -->
+                                            <div class="product-details text-center">
+                                                <!-- product name -->
+                                                <div class="product-name">
+                                                    <a href="/Product/Detail/@product.product_id">
+                                                        @product.product_name
+                                                    </a>
+                                                </div>
+                                                <!-- End product name -->
+                                                <!-- product price -->
+                                                <div class="product-price">
+                                                    <span class="price">
+                                                        @($"{product.price:n0} VND")
+                                                    </span>
+                                                </div>
+                                                <!-- End product price -->
+
+                                                <div class="product-review">
+                                                    <i class="font-13 fa fa-star"></i>
+                                                    <i class="font-13 fa fa-star"></i>
+                                                    <i class="font-13 fa fa-star"></i>
+                                                    <i class="font-13 fa fa-star"></i>
+                                                    <i class="font-13 fa fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <!-- End product details -->
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div id="tab1" class="tab_content grid-products">
+                                <div class="productSlider">
+                                    <div class="col-12 item">
+                                        <div class="product-details text-center">
+                                            <div class="product-name">
+                                                <a href="#">Không có sản phẩm nào</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="store-feature section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="display-table store-info">
+                    <li class="display-table-cell">
+                        <i class="icon anm anm-truck-l"></i>
+                        <h5>FREE SHIP &amp; HOÀN TRẢ</h5>
+                        <span class="sub-text">Miễn phí vận chuyển dưới 5km</span>
+                    </li>
+                    <li class="display-table-cell">
+                        <i class="icon anm anm-dollar-sign-r"></i>
+                        <h5>CHẤT LƯỢNG ĐẢM BẢO</h5>
+                        <span class="sub-text">30 ngày hoàn trả tiền</span>
+                    </li>
+                    <li class="display-table-cell">
+                        <i class="icon anm anm-comments-l"></i>
+                        <h5>CHĂM SÓC KHÁCH HÀNG</h5>
+                        <span class="sub-text">Hỗ trợ khách hàng 24/7</span>
+                    </li>
+                    <li class="display-table-cell">
+                        <i class="icon anm anm-credit-card-front-r"></i>
+                        <h5>THANH TOÁN AN TOÀN</h5>
+                        <span class="sub-text">Thanh toán nhiều hình thức khác nhau.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function (d, m) {
+        var defaultSettings = {
+            "defaultBotIds": ["shop-ixhmr"],
+            "defaultAssignee": "shop-ixhmr"
+        };
+        var kommunicateSettings = {
+            "appId": "2514b697239b84269aa2cde1983690b71",
+            "popupWidget": true,
+            "automaticChatOpenOnNavigation": true,
+            "onInit": function () {
+                Kommunicate.updateSettings(defaultSettings);
+            }
+        };
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m;
+        m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+</script>
