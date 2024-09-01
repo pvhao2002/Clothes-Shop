@@ -1,0 +1,244 @@
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\ClothesShop.dll.config
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\ClothesShop.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\ClothesShop.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\csc.exe
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\csc.exe.config
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\csc.rsp
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\csi.exe
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\csi.exe.config
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\csi.rsp
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.Managed.Core.targets
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.AppContext.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Collections.Immutable.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Console.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Globalization.Calendars.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.IO.Compression.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.IO.FileSystem.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Net.Http.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Net.Sockets.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Reflection.Metadata.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.ValueTuple.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Xml.XmlDocument.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Xml.XPath.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\vbc.exe
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\vbc.exe.config
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\vbc.rsp
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\VBCSCompiler.exe
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\roslyn\VBCSCompiler.exe.config
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Antlr3.Runtime.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\EntityFramework.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\EntityFramework.SqlServer.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Auth.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Auth.Mvc.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Core.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Oauth2.v2.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Web.Infrastructure.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Newtonsoft.Json.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Owin.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\PagedList.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\PagedList.Mvc.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.CodeDom.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Helpers.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Mvc.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Optimization.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Razor.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.WebPages.Deployment.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.WebPages.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.WebPages.Razor.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\WebGrease.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\EntityFramework.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\EntityFramework.SqlServer.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Auth.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Auth.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Auth.Mvc.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Auth.Mvc.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Core.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Core.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Oauth2.v2.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Google.Apis.Oauth2.v2.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Newtonsoft.Json.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\PagedList.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\PagedList.Mvc.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.CodeDom.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Helpers.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Mvc.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Optimization.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.Razor.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.WebPages.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.WebPages.Deployment.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\System.Web.WebPages.Razor.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Antlr3.Runtime.pdb
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\obj\Release\ClothesShop.csproj.AssemblyReference.cache
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\obj\Release\ClothesShop.csproj.CoreCompileInputs.cache
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\obj\Release\ClothesShop.csproj.CopyComplete
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\obj\Release\ClothesShop.dll
+E:\BAO CAO TOT NGHIEP\ClothesShop\ClothesShop\obj\Release\ClothesShop.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\ClothesShop.dll.config
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\ClothesShop.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\ClothesShop.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\csc.exe
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\csc.exe.config
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\csc.rsp
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\csi.exe
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\csi.exe.config
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\csi.rsp
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.Managed.Core.targets
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.AppContext.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Collections.Immutable.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Console.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Globalization.Calendars.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.IO.Compression.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.IO.FileSystem.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Net.Http.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Net.Sockets.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Reflection.Metadata.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.ValueTuple.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Xml.XmlDocument.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Xml.XPath.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\vbc.exe
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\vbc.exe.config
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\vbc.rsp
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\VBCSCompiler.exe
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\roslyn\VBCSCompiler.exe.config
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Antlr3.Runtime.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\EntityFramework.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\EntityFramework.SqlServer.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Auth.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Auth.Mvc.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Core.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Oauth2.v2.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.Core.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.Cookies.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.OAuth.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Web.Infrastructure.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Newtonsoft.Json.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Owin.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\PagedList.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\PagedList.Mvc.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.CodeDom.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Helpers.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Mvc.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Optimization.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Razor.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.WebPages.Deployment.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.WebPages.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.WebPages.Razor.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\WebGrease.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\EntityFramework.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\EntityFramework.SqlServer.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Auth.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Auth.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Auth.Mvc.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Auth.Mvc.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Core.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Core.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Oauth2.v2.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Google.Apis.Oauth2.v2.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.Core.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.Cookies.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.Owin.Security.OAuth.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Newtonsoft.Json.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\PagedList.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\PagedList.Mvc.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.CodeDom.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Helpers.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Mvc.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Optimization.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.Razor.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.WebPages.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.WebPages.Deployment.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\System.Web.WebPages.Razor.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Antlr3.Runtime.pdb
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\obj\Release\ClothesShop.csproj.AssemblyReference.cache
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\obj\Release\ClothesShop.csproj.CoreCompileInputs.cache
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\obj\Release\ClothesShop.csproj.CopyComplete
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\obj\Release\ClothesShop.dll
+E:\workspace\hoa hong den\ClothesShop\ClothesShop\ClothesShop\obj\Release\ClothesShop.pdb

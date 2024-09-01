@@ -1,0 +1,485 @@
+﻿@{
+    string currentController = ViewBag.CurrentController as string;
+    string classBody = "template-index template-index-belle";
+    if ("Cart".Equals(currentController) || "Login".Equals(currentController) || "Register".Equals(currentController))
+    {
+        classBody = "page-template";
+    }
+    else
+    {
+        classBody = "template-product";
+    }
+    var user_id = 0;
+    if (Session["user"] != null || !string.IsNullOrEmpty(Request.Cookies["userid"]?.Value))
+    {
+        user_id = Session["user"] == null ? Convert.ToInt32(Request.Cookies["userid"].Value ?? "0")
+            : (Session["user"] as ClothesShop.Models.user).user_id;
+    }
+
+    var cart = new ClothesShop.Models.cart();
+    var user = new ClothesShop.Models.user();
+    var listCate = new List<ClothesShop.Models.category>();
+    using (var ctx = new ClothesShop.Models.DBContext())
+    {
+        user = ctx.users.FirstOrDefault(item => item.user_id == user_id);
+        var cartEmp = ctx.carts.FirstOrDefault(c => c.user_id == user_id);
+        if (cartEmp != null)
+        {
+            cart.cart_id = cartEmp.cart_id;
+            cart.total_price = cartEmp.total_price;
+            cart.total_quantity = cartEmp.total_quantity;
+            cart.cart_items = cartEmp.cart_items
+                .ToList()
+                .Select(item => new ClothesShop.Models.cart_items
+                {
+                    cart_item_id = item.cart_item_id,
+                    product = item.product,
+                    total_price = item.total_price,
+                    quantity = item.quantity
+                })
+                .ToList();
+        }
+        listCate = ctx.categories.Where(item => "active".Equals(item.status.ToLower())).ToList();
+    }
+}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title - AmyShop</title>
+    <meta name="description" content="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/assets/client/images/favicon.png" />
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="~/assets/client/css/plugins.css">
+    <!-- Bootstap CSS -->
+    <link rel="stylesheet" href="~/assets/client/css/bootstrap.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/assets/client/css/style.css">
+    <link rel="stylesheet" href="~/assets/client/css/responsive.css">
+    <script src="~/assets/client/js/vendor/jquery-3.3.1.min.js"></script>
+    @RenderSection("css", false)
+</head>
+<body class="@classBody belle">
+    <div class="pageWrapper">
+        <div class="top-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10 col-sm-8 col-md-5 col-lg-4">
+                        <div class="language-dropdown">
+                            <span class="language-dd">Tiếng việt</span>
+                            <ul id="language">
+                                <li class="">Tiếng anh</li>
+                            </ul>
+                        </div>
+                        <p class="phone-no"><i class="anm anm-phone-s"></i> 0975471622</p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
+                        <div class="text-center">
+                            <p class="top-header_middle-text"> AmyShop - Thiên đường thời trang</p>
+                        </div>
+                    </div>
+                    <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
+                        <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
+                        @if (user_id != 0)
+                        {
+                            <ul class="customer-links list-inline">
+                                <li><a href="/Profile">Xin chào, @user.full_name</a></li>
+                                <li><a href="/Home/Logout">Đăng xuất</a></li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="customer-links list-inline">
+                                <li><a href="/Login">Đăng nhập</a></li>
+                                <li><a href="/Register">Đăng ký tài khoản</a></li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if ("Shop".Equals(currentController)
+            || "Home".Equals(currentController)
+            || "About".Equals(currentController)
+            || currentController.IsEmpty())
+        {
+            <div class="header-wrap classicHeader animated d-flex">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!--Desktop Logo-->
+                        <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
+                            <a href="/">
+                                <h1> AmyShop</h1>
+                            </a>
+                        </div>
+                        <!--End Desktop Logo-->
+                        <div class="col-2 col-sm-3 col-md-3 col-lg-8">
+                            <div class="d-block d-lg-none">
+                                <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
+                                    <i class="icon anm anm-times-l"></i>
+                                    <i class="anm anm-bars-r"></i>
+                                </button>
+                            </div>
+                            <!--Desktop Menu-->
+                            <nav class="grid__item" id="AccessibleNav">
+                                <!-- for mobile -->
+                                <ul id="siteNav" class="site-nav medium center hidearrow">
+                                    <li class="lvl1 parent megamenu">
+                                        <a href="/">
+                                            Trang
+                                            chủ <i class="anm anm-angle-down-l "></i>
+                                        </a>
+                                    </li>
+                                    <li class="lvl1 parent megamenu">
+                                        <a href="/Product/">Sản phẩm <i class="anm anm-angle-down-l"></i></a>
+                                    </li>
+                                    <li class="lvl1 parent megamenu">
+                                        <a href="/About">
+                                            Về
+                                            chúng tôi <i class="anm anm-angle-down-l"></i>
+                                        </a>
+                                    </li>
+                                    <li class="lvl1">
+                                        <a href="/Product">
+                                            <b>Mua ngay!</b> <i class="anm anm-angle-down-l"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!--End Desktop Menu-->
+                        </div>
+                        <!--Mobile Logo-->
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
+                            <div class="logo">
+                                <a href="/Home">
+                                    <img src="~/assets/client/images/logo.png" alt="Pet shop"
+                                         style="width: 40px; height: 40px; object-fit: contain;" title="Pet shop" />
+                                </a>
+                            </div>
+                        </div>
+                        <!--Mobile Logo-->
+                        <div class="col-4 col-sm-3 col-md-3 col-lg-2">
+                            <div class="site-cart">
+                                <a href="#;" class="site-header__cart" title="Cart">
+                                    <i class="icon anm anm-bag-l"></i>
+                                    @if (cart != null && cart.cart_items.Count > 0)
+                                    {
+                                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">
+                                            @cart.cart_items.Count
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">
+                                            0
+                                        </span>
+                                    }
+
+                                </a>
+                                <!--Minicart Popup-->
+                                <div id="header-cart" class="block block-cart">
+                                    @if (cart == null || cart.cart_items.Count < 1)
+                                    {
+                                        <ul class="mini-products-list">
+                                            <li class="item">No items in the cart.</li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <ul class="mini-products-list overflow-auto h-50">
+                                            @foreach (var item in cart.cart_items)
+                                            {
+                                                <li class="item cart-item">
+                                                    <a class="product-image" href="/Product/@item.product_id">
+                                                        <img src=@Url.Content(item.product.product_image) alt="shop" />
+                                                    </a>
+                                                    <div class="product-details">
+                                                        <a href="/Cart/Remove/@item.cart_item_id" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+                                                        <a class="pName" href="/Product/@item.product_id">@item.product.product_name</a>
+                                                        <div class="wrapQtyBtn">
+                                                            <div class="qtyField">
+                                                                <span class="label">Số lượng:</span>
+                                                                <input type="text" id="Quantity" readonly name="quantity" value="@item.quantity" class="product-form__input qty">
+                                                            </div>
+                                                        </div>
+                                                        <div class="priceRow">
+                                                            <div class="product-price">
+                                                                <span class="money">Đơn giá: @($"{item.product.price:n0} VND")</span>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <span class="money">Thành tiền: @($"{item.total_price:n0} VND")</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+
+                                    <div class="total">
+                                        <div class="total-in">
+                                            <span class="label">Tổng tiền:</span><span class="product-price">
+                                                <span class="money">
+
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="buttonSet text-center">
+                                            <a href="/Cart" class="btn btn-secondary btn--small">Xem</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--EndMinicart Popup-->
+                            </div>
+                            <div class="site-header__search">
+                                <button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="header-wrap animated d-flex">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!--Desktop Logo-->
+                        <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
+                            <a href="/">
+                                <h1> AmyShop</h1>
+                            </a>
+                        </div>
+                        <!--End Desktop Logo-->
+                        <div class="col-2 col-sm-3 col-md-3 col-lg-8">
+                            <div class="d-block d-lg-none">
+                                <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
+                                    <i class="icon anm anm-times-l"></i>
+                                    <i class="anm anm-bars-r"></i>
+                                </button>
+                            </div>
+                            <!--Desktop Menu-->
+                            <nav class="grid__item" id="AccessibleNav" role="navigation">
+                                <!-- for mobile -->
+                                <ul id="siteNav" class="site-nav medium center hidearrow">
+                                    <li class="lvl1 parent megamenu">
+                                        <a href="/">Trang chủ <i class="anm anm-angle-down-l"></i></a>
+                                    </li>
+                                    <li class="lvl1 parent megamenu">
+                                        <a href="/Product">Sản phẩm <i class="anm anm-angle-down-l"></i></a>
+                                    </li>
+                                    <li class="lvl1 parent megamenu">
+                                        <a href="/About">
+                                            Về chúng tôi <i class="anm anm-angle-down-l"></i>
+                                        </a>
+                                    </li>
+                                    <li class="lvl1"><a href="/Product"><b>Mua ngay!</b></a></li>
+                                </ul>
+                            </nav>
+                            <!--End Desktop Menu-->
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="~/assets/client/images/logo.png" alt="Clothes Shop"
+                                         style="width: 40px; height: 40px; object-fit: contain;" title="Clothes Shop" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="mobile-nav-wrapper" role="navigation">
+            <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Đóng</div>
+            <ul id="MobileNav" class="mobile-nav">
+                <li class="lvl1 parent megamenu"><a href="/">Trang chủ <i class="anm anm-plus-l"></i></a></li>
+                <li class="lvl1 parent megamenu">
+                    <a href="/Product">Sản phẩm <i class="anm anm-plus-l"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" class="site-nav">Loại sản phẩm<i class="anm anm-plus-l"></i></a>
+                            <ul>
+                                <li><a href="/Product" class="site-nav">Tất cả</a></li>
+                                @foreach (var item in listCate)
+                                {
+                                    <li><a href="/Product?cate=@item.category_id" class="site-nav">@item.category_name</a></li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="lvl1 parent megamenu"><a href="/About">Về chúng tôi <i class="anm anm-plus-l"></i></a></li>
+                <li class="lvl1"><a href="/Product"><b>Mua ngay!</b></a></li>
+            </ul>
+        </div>
+        <div id="page-content">
+            @RenderBody()
+        </div>
+        <footer id="footer">
+            <div class="newsletter-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 w-100 d-flex justify-content-start align-items-center">
+                            <div class="display-table">
+                                <div class="display-table-cell footer-newsletter">
+                                    <div class="section-header text-center">
+                                        <label class="h2"><span>Đăng ký để </span>các thông tin khuyến mãi!</label>
+                                    </div>
+                                    <form action="#" method="post">
+                                        <div class="input-group">
+                                            <input type="email" class="input-group__field newsletter__input" name="EMAIL"
+                                                   value="" placeholder="Email" required="">
+                                            <span class="input-group__btn">
+                                                <button class="btn newsletter__submit" name="commit"
+                                                        onclick="toastFunc()"
+                                                        id="Subscribe">
+                                                    <span class="newsletter__submit-text--large">Subscribe</span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-5 d-flex justify-content-end align-items-center">
+                            <div class="footer-social">
+                                <ul class="list--inline site-footer__social-icons social-icons">
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on Facebook">
+                                            <i class="icon icon-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on Twitter">
+                                            <i class="icon icon-twitter"></i> <span class="icon__fallback-text">Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on Pinterest">
+                                            <i class="icon icon-pinterest"></i> <span class="icon__fallback-text">Pinterest</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on Instagram">
+                                            <i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on Tumblr">
+                                            <i class="icon icon-tumblr-alt"></i> <span class="icon__fallback-text">Tumblr</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on YouTube">
+                                            <i class="icon icon-youtube"></i> <span class="icon__fallback-text">YouTube</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icons__link" href="#" target="_blank"
+                                           title="Belle Multipurpose Bootstrap 4 Template on Vimeo">
+                                            <i class="icon icon-vimeo-alt"></i> <span class="icon__fallback-text">Vimeo</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer">
+                <div class="container">
+                    <!--Footer Links-->
+                    <div class="footer-top">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                                <h4 class="h4">AmyShop</h4>
+                                <ul>
+                                    <li><a href="/Home/ReturnPolicy">Chính sách đổi hàng</a></li>
+                                    <li><a href="/Home/ShippingPolicy">Chính sách vận chuyển</a></li>
+                                    <li><a href="/Home/WarrentyPolicy">Chính sách bảo hành</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                                <h4 class="h4">Informations</h4>
+                                <ul>
+                                    <li><a href="/About">Về chúng tôi</a></li>
+                                    <li><a href="/Home/PrivacyPolicy">Chính sách bảo mật</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                                <h4 class="h4">Customer Services</h4>
+                                <ul>
+                                    <li><a href="/Home/FAQ">FAQ's</a></li>
+                                    <li><a href="/About">Liên hệ chúng tôi</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
+                                <h4 class="h4">Contact Us</h4>
+                                <ul class="addressFooter">
+                                    <li>
+                                        <i class="icon anm anm-map-marker-al"></i>
+                                        <p>55 Hai bà trưng,<br>Quận 1, TP HCM</p>
+                                    </li>
+                                    <li class="phone">
+                                        <i class="icon anm anm-phone-s"></i>
+                                        <p>0975471622</p>
+                                    </li>
+                                    <li class="email">
+                                        <i class="icon anm anm-envelope-l"></i>
+                                        <p>Amyshop@gmail.com</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
+                                <span></span> <a href="/">Amyshop</a>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
+                                <ul class="payment-icons list--inline">
+                                    <li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>
+                                    <li><i class="icon fa fa-cc-mastercard" aria-hidden="true"></i></li>
+                                    <li><i class="icon fa fa-cc-discover" aria-hidden="true"></i></li>
+                                    <li><i class="icon fa fa-cc-paypal" aria-hidden="true"></i></li>
+                                    <li><i class="icon fa fa-cc-amex" aria-hidden="true"></i></li>
+                                    <li><i class="icon fa fa-credit-card" aria-hidden="true"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        @RenderSection("scripts", required: false)
+        <script src="~/assets/client/js/vendor/modernizr-3.6.0.min.js"></script>
+        <script src="~/assets/client/js/vendor/jquery.cookie.js"></script>
+        <script src="~/assets/client/js/vendor/wow.min.js"></script>
+        <!-- Including Javascript -->
+        <script src="~/assets/client/js/bootstrap.min.js"></script>
+        <script src="~/assets/client/js/plugins.js"></script>
+        <script src="~/assets/client/js/popper.min.js"></script>
+        <script src="~/assets/client/js/lazysizes.js"></script>
+        <script src="~/assets/client/js/main.js"></script>
+        <script src="~/assets/client/js/vendor/photoswipe.min.js"></script>
+        <script src="~/assets/client/js/vendor/photoswipe-ui-default.min.js"></script>
+        <script src="~/assets/client/js/toast.js"></script>
+    </div>
+</body>
+</html>

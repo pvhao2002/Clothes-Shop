@@ -1,0 +1,64 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<ClothesShop.Models.product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section css {
+    <link rel="stylesheet" href="~/assets/admin/css/pagecss.css">
+}
+
+<style>
+    .truncate {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body table-responsive">
+            <a href="/Admin/ProductAdmin/Add" class="btn btn-primary mb-2">Thêm sản phẩm</a>
+            <table class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <th scope="col"> Mã sản phẩm </th>
+                        <th> Tên sản phẩm </th>
+                        <th> Giá sản phẩm </th>
+                        <th> Hình ảnh </th>
+                        <th> Số lượng kho </th>
+                        <th> Số lượng bán được </th>
+                        <th> Loại sản phẩm </th>
+                        <th> Mô tả </th>
+                        <th> # </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope='row'>@item.product_id</td>
+                            <td class='text-truncate' style='max-width: 250px;' title='@item.product_name'>@item.product_name</td>
+                            <td>@item.price</td>
+                            <td><img src=@Url.Content(item.product_image) alt='IMG' class='mt-2' style='width: 100px; height: 100px; border-radius: 0 !important;' /></td>
+                            <td>@item.stock</td>
+                            <td>@item.sold</td>
+                            <td>@item.category.category_name</td>
+                            <td class='text-truncate' style='max-width: 250px;' title='@item.description'>@item.description</td>
+                            <td>
+                                <a href='/Admin/ProductAdmin/Edit/@item.product_id' class='btn btn-warning'>Sửa</a>
+                                <a href='/Admin/ProductAdmin/Delete/@item.product_id' class='btn btn-outline-danger'>Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="mt-2">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded })
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,90 @@
+﻿@model  ClothesShop.ViewModel.AccountViewModel
+@using Microsoft.Owin.Security
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+        .btn-primary {
+            background: #2f86f7;
+            padding: 12px;
+        }
+
+            .btn-primary:hover {
+                background: #2f86f7;
+            }
+    </style>
+</head>
+<div class="page section-header text-center">
+    <div class="page-title">
+        <div class="wrapper">
+            <h1 class="page-width">Đăng nhập</h1>
+        </div>
+    </div>
+</div>
+<!--End Page Title-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+            <div class="mb-4">
+                @using (Html.BeginForm("doLogin", "Login", FormMethod.Post, new { @class = "contact-form" }))
+                {
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+
+                            @if (Session["error"] != null)
+                            {
+                                <span class="text-danger">@Session["error"]</span>
+                                Session["error"] = null;
+                            }
+                            else if (Session["success"] != null)
+                            {
+                                <span class="text-success">@Session["success"]</span>
+                                Session["success"] = null;
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Username)
+                                @Html.TextBoxFor(m => m.Username, new
+                           {
+                               autocorrect = "off",
+                               autocapitalize = "off",
+                               type = "email",
+                               placeholder = "abc@gmail.com",
+                               required = "required"
+                           })
+                                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(model => model.Password, new { placeholder = "*******", pattern = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!#$%^&*()\\-_=+{};:,<.>/?]).{8,}", title = "Mật khẩu phải có ít nhất 8 ký tự, ít nhất 1 chữ số, 1 chữ hoa, 1 chữ thường và 1 ký tự đặc biệt", @class = "form-control", required = "required" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="submit" class="btn mb-3" name="login" value="Đăng nhập">
+                            <p class="mb-4">
+                                <a href="/Register" id="customer_register_link">Tạo tài khoản</a> |
+                                <a href="/ForgotPassword" id="customer_register_link">Quên mật khẩu</a>
+                            </p>
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <a href="/Login/LoginWithGoogle" class="btn btn-primary">Đăng nhập với Google</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

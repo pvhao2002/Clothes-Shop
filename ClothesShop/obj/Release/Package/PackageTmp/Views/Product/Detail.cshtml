@@ -1,0 +1,307 @@
+﻿@model ClothesShop.ViewModel.ProductViewModel
+@{
+    ViewBag.Title = "Product Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var isLogin = (Session["user"] != null || !string.IsNullOrEmpty(Request.Cookies["userid"]?.Value));
+}
+@section css {
+    <link rel="stylesheet" href="~/assets/client/css/comment.css">
+    <link rel="stylesheet" href="~/assets/client/css/rating.css">
+}
+
+<div id="MainContent" class="main-content" role="main">
+    <div id="ProductSection-product-template" class="product-template__container prstyle1 container">
+        <!--product-single-->
+        <div class="product-single">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="product-details-img">
+                        <div class="product-thumb">
+                            <div id="gallery" class="product-dec-slider-2 product-tab-left">
+                                <a data-image=@Url.Content(Model.product.product_image)
+                                   data-zoom-image=@Url.Content(Model.product.product_image)
+                                   class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true"
+                                   tabindex="-1">
+                                    <img class="blur-up lazyload" data-src=@Url.Content(Model.product.product_image)
+                                         src=@Url.Content(Model.product.product_image) alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="zoompro-wrap product-zoom-right pl-20">
+                            <div class="zoompro-span">
+                                <img class="blur-up lazyload zoompro"
+                                     data-zoom-image=@Url.Content(Model.product.product_image) alt=""
+                                     style="width: 500px; height: 600px; object-fit: contain;"
+                                     src=@Url.Content(Model.product.product_image) />
+                            </div>
+                            <div class="product-labels">
+                                <span class="lbl on-sale">Sale</span><span class="lbl pr-label1">new</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="product-single__meta">
+                        <h1 class="product-single__title">
+                            @Model.product.product_name
+                        </h1>
+                        <div class="prInfoRow">
+                            <div class="product-stock">
+                                <span class="instock ">Còn hàng</span>
+                            </div>
+                            <div class="product-stock">
+                                Số lượng:
+                                <span class="instock ">
+                                    @Model.product.stock sản phẩm
+                                </span>
+                            </div>
+                            <div class="product-sku">
+                                Mã sản phẩm: <span class="variant-sku">
+                                    @Model.product.product_id
+                                </span>
+                            </div>
+                            <div class="product-review">
+                                <a class="reviewLink" href="#tab4">
+                                    @for (int i = 0; i < Model.fullStars; i++)
+                                    {
+                                        <i class="font-13 fa fa-star"></i>
+                                    }
+                                    @if (Model.halfStars == 1)
+                                    {
+                                        <i class="font-13 fa fa-star-half-o"></i>
+                                    }
+                                    @for (int i = 0; i < Model.emptyStars; i++)
+                                    {
+                                        <i class="font-13 fa fa-star-o"></i>
+                                    }
+                                    <span class="txtReview">@Model.numberRating đánh giá</span>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="product-single__price product-single__price-product-template">
+                            <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
+                                <span id="ProductPrice-product-template">
+                                    <span class="money">
+                                        @($"{Model.product.price:n0} VND")
+                                    </span>
+                                </span>
+                            </span>
+                        </p>
+                    </div>
+                    <div id="quantity_message">
+                        Chỉ còn <span class="items">
+                            @Model.product.stock
+                        </span> sản phẩm trong kho!
+                    </div>
+                    <form method="post" action="/Cart/Add" id="product_form_10508262282" accept-charset="UTF-8"
+                          class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                        <!-- Product Action -->
+                        <input type="hidden" id="p-id" name="pid" value="@Model.product.product_id">
+                        <input type="hidden" name="price" value="@Model.product.price">
+                        <div class="product-action clearfix">
+                            <div class="product-form__item--quantity">
+                                <div class="wrapQtyBtn">
+                                    <div class="qtyField">
+                                        <a data-pid="@Model.product.product_id" class="qtyBtn minus"
+                                           href="javascript:void(0);">
+                                            <i class="fa anm anm-minus-r"
+                                               aria-hidden="true"></i>
+                                        </a>
+                                        <input type="text" id="Quantity" name="quantity" value="1" min="1"
+                                               pattern="[0-9]*" class="product-form__input qty">
+                                        <a data-pid="@Model.product.product_id" class="qtyBtn plus"
+                                           href="javascript:void(0);">
+                                            <i class="fa anm anm-plus-r"
+                                               aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-form__item--submit">
+                                <button type="submit" name="cart-add" class="btn product-form__cart-submit">
+                                    <span>Thêm vào giỏ hàng</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Product Action -->
+                    </form>
+                    <p class="shippingMsg">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> Cửa hàng mở cửa từ <b id="fromDate">Thứ 2</b> đến <b id="toDate">Thứ 7</b>.
+                    </p>
+                    <div class="userViewMsg" data-user="200" data-time="10000">
+                        <i class="fa fa-users"
+                           aria-hidden="true"></i> <strong class="uersView">0</strong> người đã tìm kiếm sản phẩm
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End-product-single-->
+        <!--Product Fearure-->
+        <div class="prFeatures">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
+                    <img src="~/assets/client/images/credit-card.png" alt="Safe Payment" title="Safe Payment" />
+                    <div class="details">
+                        <h3>THANH TOÁN AN TOÀN</h3>Thanh toán bằng nhiều phương thức thanh toán.
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
+                    <img src="~/assets/client/images/shield.png" alt="Confidence" title="Confidence" />
+                    <div class="details">
+                        <h3>SỰ TỰ TIN</h3>Bảo vệ bao gồm việc mua hàng và dữ liệu cá nhân của bạn.
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
+                    <img src="~/assets/client/images/worldwide.png" alt="Worldwide Delivery"
+                         title="Worldwide Delivery" />
+                    <div class="details">
+                        <h3>LÀ NHÀ CUNG CẤP TRÊN TOÀN THẾ GIỚI</h3>Hơn 200 quốc gia và khu vực.
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
+                    <img src="~/assets/client/images/phone-call.png" alt="Hotline" title="Hotline" />
+                    <div class="details">
+                        <h3>Hotline</h3>Liên hệ qua +1900 1000.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Product Fearure-->
+        <!--Product Tabs-->
+        <div class="tabs-listing">
+            <ul class="product-tabs">
+                <li rel="tab1" id="t1"><a class="tablink">Chi tiết sản phẩm</a></li>
+                <li rel="tab2"><a class="tablink">Chính sách mua hàng</a></li>
+                <li rel="tab3" id="t3"><a class="tablink">Bình luận</a></li>
+                <li rel="tab4"><a class="tablink">Đánh giá</a></li>
+            </ul>
+            <div class="tab-container">
+                <div id="tab1" class="tab-content">
+                    <div class="product-description rte">
+                        <h4>Mô tả:</h4>
+                        @foreach (var des in Model.product.description.Trim().Split('\n'))
+                        {
+                            <p>
+                                @des
+                            </p>
+                        }
+                    </div>
+                </div>
+
+                <div id="tab2" class="tab-content">
+                    @Html.Raw(Model.policy.policy_content)
+                </div>
+                <div id="tab3" class="tab-content">
+                    @using (Html.BeginForm("doComment", "Comment", FormMethod.Post))
+                    {
+                        <div class="row">
+                            <div class="avatar_comment col-md-1">
+                                <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar" />
+                            </div>
+                            @Html.HiddenFor(item => item.cmt.product_id)
+                            <div class="box_comment col-md-11">
+                                @Html.TextAreaFor(m => m.cmt.content, new { placeholder = "Bình luận của bạn", @class = "commentar" })
+                                <div class="box_post">
+                                    <div class="pull-left">
+                                    </div>
+                                    <div class="pull-right">
+                                        <span>
+                                            <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
+                                                 alt="avatar" />
+                                            <i class="fa fa-caret-down"></i>
+                                        </span>
+                                        @if (isLogin)
+                                        {
+                                            <button type="submit" id="btn-comment" value="1">Gửi</button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="row">
+                        <ul id="list_comment" class="col-md-12">
+                            @foreach (var item in Model.listComment)
+                            {
+                                <li class="box_result row">
+                                    <div class="avatar_comment col-md-1">
+                                        <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar" />
+                                    </div>
+                                    <div class="result_comment col-md-11">
+                                        <h4>@item.user.email</h4>
+                                        <p>
+                                            @item.content
+                                        </p>
+                                        <div class="tools_comment">
+                                            <span>@item.comment_date</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div id="tab4" class="tab-content">
+                    <h1>Đánh giá sao về sản phẩm:</h1>
+                    <span class="usr-review__wrap">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 32">
+                            <g>
+                                <path class="star-empty" d="M145.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6h-10.6l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6 l-3.5,10H115c-0.5,0-0.8,0.2-0.9,0.6c0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L119.8,30c0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L130,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C146,12.9,146.1,12.5,145.9,12.1L145.9,12.1z" />
+                                <path class="star-empty" d="M107.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6H96.4l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H77c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L81.8,30c0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L92,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C108,12.9,108.1,12.5,107.9,12.1L107.9,12.1z" />
+                                <path class="star-empty" d="M69.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6H58.4l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H39c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L43.8,30c0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L54,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C70,12.9,70.1,12.5,69.9,12.1L69.9,12.1z" />
+                                <path class="star-empty" d="M31.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6H20.4l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H1c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L5.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L16,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C32,12.9,32.1,12.5,31.9,12.1L31.9,12.1z" />
+                                <path class="star-empty" d="M183.9,12.1L183.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6h-10.6l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H153c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L157.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L168,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C184,12.9,184.1,12.5,183.9,12.1z" />
+                            </g>
+                            <clipPath id="star-filled">
+                                <path class="star-filled" d="M145.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6h-10.6l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H115c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L119.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L130,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C146,12.9,146.1,12.5,145.9,12.1L145.9,12.1z" />
+                                <path class="star-filled" d="M107.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6H96.4l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H77c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L81.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L92,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C108,12.9,108.1,12.5,107.9,12.1L107.9,12.1z" />
+                                <path class="star-filled" d="M69.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6H58.4l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H39c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L43.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L54,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C70,12.9,70.1,12.5,69.9,12.1L69.9,12.1z" />
+                                <path class="star-filled" d="M31.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6H20.4l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H1c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L5.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L16,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C32,12.9,32.1,12.5,31.9,12.1L31.9,12.1z" />
+                                <path class="star-filled" d="M183.9,12.1L183.9,12.1c-0.1-0.4-0.5-0.6-0.9-0.6h-10.6l-3.5-10c-0.1-0.4-0.5-0.6-0.9-0.6c-0.5,0-0.8,0.2-0.9,0.6l-3.5,10H153c-0.5,0-0.8,0.2-0.9,0.6c-0.1,0.5,0,0.8,0.3,1.1l8.5,6.7L157.8,30c-0.1,0.4,0,0.8,0.3,1.1c0.4,0.2,0.8,0.3,1.2,0L168,25l8.7,6.1c0.2,0.1,0.4,0.2,0.6,0.2c0.5,0,1-0.4,1-1c0-0.1,0-0.2-0.1-0.4l-3.1-10.1l8.5-6.7C184,12.9,184.1,12.5,183.9,12.1z" />
+                            </clipPath>
+                            <rect class="rect-filled js-star-filling" x="0" width="0" height="32" clip-path="url(#star-filled)" />
+                        </svg>
+                        @if (Model.rate != null)
+                        {
+                            <input class="usr-review__range js-star-rating" disabled readonly type="range"
+                                   value="@Model.rate.rate" min="0" max="5" />
+                        }
+                        else
+                        {
+                            <input class="usr-review__range js-star-rating" name="rating" id="rate-product"
+                                   type="range" min="1" max="5" />
+                        }
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--End Product Tabs-->
+    </div>
+    <!--#ProductSection-product-template-->
+</div>
+
+
+<script>
+    function getStarRating(val) {
+        $('.js-star-filling').css({
+            'width': val * 20 + '%'
+        });
+    }
+    $(document).ready(function () {
+        var val = $('.js-star-rating').val();
+        getStarRating(val);
+        if ('@Session["tab-comment"]' == 'OK') {
+            $("#t1").removeClass("active");
+            $("#t3").addClass("active");
+            $("#tab1").addClass("d-none");
+            $("#tab3").addClass("d-block");
+            @(Session["tab-comment"] = null)
+        }
+    });
+
+    $('.js-star-rating').on('input change', function () {
+        var val = $(this).val();
+        getStarRating(val);
+        window.location.href = '/Rate/doRate?p=@Model.product.product_id&r=' + val;
+    });
+</script>

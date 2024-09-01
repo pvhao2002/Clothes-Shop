@@ -1,0 +1,85 @@
+﻿@model ClothesShop.Models.user
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page section-header text-center">
+    <div class="page-title">
+        <div class="wrapper">
+            <h1 class="page-width">Đăng ký tài khoản</h1>
+        </div>
+    </div>
+</div>
+<!--End Page Title-->
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+            <div class="mb-4">
+                @using (Html.BeginForm("doRegister", "Register", FormMethod.Post, new { @class = "contact-form" }))
+                {
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <span class="text-danger">
+                                @if (Session["error"] != null)
+                                {
+                                    <span class="text-danger">@Session["error"]</span>
+                                    Session["error"] = null;
+                                }
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="FirstName">Họ và tên</label>
+                                @Html.TextBoxFor(m => m.full_name, new
+                                {
+                                    @placeholder = "Họ và tên",
+                                    @id = "Fullname",
+                                    @required = "@required",
+                                    autofocus = ""
+                                    })
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="CustomerEmail">Email</label>
+                                @Html.TextBoxFor(m => m.email, new
+                           {
+                               placeholder = "abc@gmail.com",
+                               required = "required",
+                               autocorrect = "off",
+                               autocapitalize = "off",
+                               type = "email"
+                           })
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="CustomerPassword">Mật khẩu</label>
+                                @Html.PasswordFor(m => m.password, new
+                           {
+                               required = "required"
+                           })
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="LastName">Nhập lại mật khẩu</label>
+                                <input type="password" name="confirm-password" placeholder="" id="LastName"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="submit" class="btn mb-3" value="Đăng ký" name="register">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

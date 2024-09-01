@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ClothesShop.Models.order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .truncate {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body table-responsive">
+            <table class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <th scope="col"> Mã đơn hàng </th>
+                        <th> Người nhận </th>
+                        <th> Số điện thoại </th>
+                        <th> Địa chỉ </th>
+                        <th> Tổng tiền </th>
+                        <th> Tổng sản phẩm </th>
+                        <th> Ngày đặt </th>
+                        <th> Trạng thái </th>
+                        <th> # </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope='row'>@item.order_id</td>
+                            <td class='text-truncate' style='max-width: 250px;' title='@item.full_name'>@item.full_name</td>
+                            <td>@item.phone_number</td>
+                            <td>@item.shipping_address</td>
+                            <td>@($"{item.total_price:n0} VND")</td>
+                            <td class='text-truncate' style='max-width: 250px;' title='@item.total_quantity'>@item.total_quantity</td>
+                            <td>@item.created_at</td>
+                            @switch (item.status)
+                            {
+                                case "pending":
+                                    <td>
+                                        Đang chờ xác nhận
+                                    </td>
+                                    <td>
+                                        <a href='/Admin/OrderAdmin/Confirm/@item.order_id' class='btn btn-primary'>Xác nhận</a>
+                                        <a href='/Admin/OrderAdmin/Cancel/@item.order_id' class='btn btn-secondary'>Hủy</a>
+                                    </td>
+                                    break;
+                                case "in_shipping":
+                                    <td>
+                                        Đang giao hàng
+                                    </td>
+                                    <td>
+                                        <a href='/Admin/OrderAdmin/Done/@item.order_id' class='btn btn-primary'>Hoàn thành</a>
+                                    </td>
+                                    break;
+                                case "cancel":
+                                    <td>Đã hủy</td>
+                                    break;
+                                case "done":
+                                    <td>Hoàn thành</td>
+                                    break;
+                                default:
+                                    break;
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

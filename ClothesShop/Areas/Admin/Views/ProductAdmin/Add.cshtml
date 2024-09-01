@@ -1,0 +1,56 @@
+﻿@model ClothesShop.ViewModel.ProductViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Thêm mới sản phẩm</h4>
+            <p class="card-description"> Nhập thông tin sản phẩm </p>
+            @using (Html.BeginForm("doAdd", "ProductAdmin", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "forms-sample" }))
+            {
+                <div class="form-group">
+                    <label for="exampleInputName1">Tên sản phẩm</label>
+                    @Html.TextBoxFor(m => m.product.product_name, new { required = "required", @class = "form-control", placeholder = "Tên sản phẩm" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPrice">Giá sản phẩm</label>
+                    @Html.TextBoxFor(m => m.product.price, new { required = "required", @class = "form-control", type = "number", placeholder = "Giá" })
+                </div>
+                <div class="form-group">
+                    <label>Số lượng trong kho</label>
+                    @Html.TextBoxFor(m => m.product.stock, new { required = "required", @class = "form-control", type = "number", placeholder = "Số lượng kho" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelectGender">Loại sản phẩm</label>
+                    <select class="form-control" id="exampleSelectGender" name="cate" required>
+                        <option value=''>Chọn thể loại</option>
+                        @foreach (var cate in Model.categories)
+                        {
+                            <option value='@cate.category_id'>@cate.category_name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Hình ảnh</label>
+                    <input type="file" name="img" class="file-upload-default" required>
+                    <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Tải ảnh lên">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Tải lên</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Mô tả</label>
+                    @Html.TextAreaFor(m => m.product.description, new { rows = "5", @class = "form-control", required = "required" })
+                </div>
+                <input type="submit" class="btn btn-gradient-primary me-2" name="add" value="Thêm">
+            }
+        </div>
+    </div>
+</div>
